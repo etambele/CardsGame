@@ -12,9 +12,11 @@ import com.example.CardsGame.Model.Deck.Deck;
 import com.example.CardsGame.Model.Deck.Shoe;
 import com.example.CardsGame.Model.Game.Game;
 import com.example.CardsGame.Model.Player.Player;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository("GameImpl")
 public class GameDataAccessService implements GameDaoInterface, GameFunctionDaoInterface, PlayerDaoInterface, DeckDaoInterface {
 
     private final Map<String, Game> games = new HashMap<>();
@@ -145,7 +147,15 @@ public class GameDataAccessService implements GameDaoInterface, GameFunctionDaoI
 
     @Override
     public void shuffle(String gameId) throws GameNotFoundException {
-
+        Random random = new Random();
+        Game game = this.getGame(gameId);
+        int shoeSize = game.getShoe().getCards().size();
+        for(int i=0; i< shoeSize; i++){
+            int rand = random.nextInt(shoeSize);
+            Card temp = game.getShoe().getCards().get(i);
+            game.getShoe().getCards().set(i, game.getShoe().getCards().get(rand));
+            game.getShoe().getCards().set(rand, temp);
+        }
     }
 
     private Optional<Player> getPlayer(String playerId, Game game) {
