@@ -1,6 +1,5 @@
 package com.example.CardsGame.Service;
 
-import com.example.CardsGame.Exceptions.DeckNotFoundException;
 import com.example.CardsGame.Exceptions.GameNotFoundException;
 import com.example.CardsGame.GameDao.Interface.DeckDaoInterface;
 import com.example.CardsGame.GameDao.Interface.GameDaoInterface;
@@ -8,9 +7,6 @@ import com.example.CardsGame.GameDao.Interface.GameFunctionDaoInterface;
 import com.example.CardsGame.GameDao.Interface.PlayerDaoInterface;
 import com.example.CardsGame.Model.Card.Card;
 import com.example.CardsGame.Model.Card.Suit;
-import com.example.CardsGame.Model.Deck.Deck;
-import com.example.CardsGame.Model.Deck.Shoe;
-import com.example.CardsGame.Model.Game.Game;
 import com.example.CardsGame.Model.Player.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

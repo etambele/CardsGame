@@ -1,7 +1,5 @@
 package com.example.CardsGame.Model.Card;
 
-import java.util.Comparator;
-
 public class Card implements Comparable<Card> {
     private final FaceValue faceValue;
     private Suit suit;
