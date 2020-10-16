@@ -33,4 +33,17 @@ public class Card implements Comparable<Card> {
         return card.faceValue.compareTo(faceValue);
     }
 
+    @Override
+    public int hashCode() {
+        return 1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return faceValue == card.faceValue &&
+                suit == card.suit;
+    }
 }

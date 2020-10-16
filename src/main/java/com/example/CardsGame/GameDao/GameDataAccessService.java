@@ -69,6 +69,7 @@ public class GameDataAccessService implements GameDaoInterface, GameFunctionDaoI
         Game game = this.getGame(gameId);
         Deck deck = this.getDeck(deckId, "Invalid Deck: ");
         game.getShoe().getCards().addAll(deck.getCards());
+        decks.remove(deckId);
         LOGGER.info("Deck added to shoe for game {}", gameId);
     }
 
@@ -145,7 +146,7 @@ public class GameDataAccessService implements GameDaoInterface, GameFunctionDaoI
         Map<Card, Integer> undealtCards = new HashMap<>();
         for (Card card : game.getShoe().getCards()) {
             if (undealtCards.containsKey(card)) {
-                undealtCards.computeIfPresent(card, (key, val) -> ++val);
+                undealtCards.computeIfPresent(card, (key, val) -> val + 1);
             } else {
                 undealtCards.put(card, 1);
             }
