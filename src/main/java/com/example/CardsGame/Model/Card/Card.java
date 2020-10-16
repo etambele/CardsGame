@@ -1,6 +1,8 @@
 package com.example.CardsGame.Model.Card;
 
-public class Card implements Comparable<Card>{
+import java.util.Comparator;
+
+public class Card implements Comparable<Card> {
     private final FaceValue faceValue;
     private Suit suit;
 
@@ -28,7 +30,7 @@ public class Card implements Comparable<Card>{
 
     @Override
     public int compareTo(Card card) {
-        return faceValue.compareTo(card.faceValue);
+        return card.faceValue.compareTo(faceValue);
     }
 
 }

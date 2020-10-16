@@ -42,7 +42,7 @@ public class GameService {
         return gameDaoInterface.createGame();
     }
 
-    public void deleteGame(String gameId) throws GameNotFoundException {
+    public void deleteGame(String gameId) {
         gameDaoInterface.deleteGame(gameId);
     }
 
@@ -51,36 +51,36 @@ public class GameService {
 
     }
 
-    public void addDeck(String gameId, String deckId) throws GameNotFoundException {
+    public void addDeck(String gameId, String deckId) {
         deckDaoInterface.addDeck(gameId, deckId);
 
     }
 
-    public void addPlayer(String gameId, String playerId) throws IllegalArgumentException {
+    public void addPlayer(String gameId, String playerId) {
         playerDaoInterface.addPlayer(gameId, playerId);
     }
 
-    public void removePlayer(String gameId, String playerId) throws GameNotFoundException {
+    public void removePlayer(String gameId, String playerId) {
         playerDaoInterface.removePlayer(gameId, playerId);
     }
 
-    public List<Card> getPlayerCards(String gameId, String playerId) throws GameNotFoundException {
+    public List<Card> getPlayerCards(String gameId, String playerId) {
         return playerDaoInterface.getPlayerCards(gameId, playerId);
     }
 
-    public List<Player> getPlayersTotal(String gameId) throws GameNotFoundException {
+    public List<Player> getPlayersTotal(String gameId) {
         return playerDaoInterface.getPlayersTotal(gameId);
     }
 
-    public void dealCards(String gameId, int dealNumber) throws GameNotFoundException {
+    public void dealCards(String gameId, int dealNumber) {
         gameFunctionDaoInterface.dealCards(gameId, dealNumber);
     }
 
-    public Map<Suit, Integer> getUndealtCardsPerSuits(String gameId) throws GameNotFoundException {
+    public Map<Suit, Integer> getUndealtCardsPerSuits(String gameId) {
         return gameFunctionDaoInterface.getUndealtCardsPerSuits(gameId);
     }
 
-    public Map<Card, Integer> getUndealtCards(String gameId) throws GameNotFoundException {
+    public Map<Card, Integer> getUndealtCards(String gameId) {
         return gameFunctionDaoInterface.getUndealtCards(gameId);
     }
 

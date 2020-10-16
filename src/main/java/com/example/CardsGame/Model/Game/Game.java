@@ -8,22 +8,22 @@ import java.util.List;
 import java.util.UUID;
 
 public class Game {
-    private UUID gameId;
+    private UUID id;
     private List<Player> players;
     private final Shoe shoe;
 
     public Game() {
-        this.gameId = UUID.randomUUID();
+        this.id = UUID.randomUUID();
         this.players = new ArrayList<>();
         this.shoe = new Shoe();
     }
 
-    public UUID getGameId() {
-        return gameId;
+    public UUID getId() {
+        return id;
     }
 
-    public void setGameId(UUID gameId) {
-        this.gameId = gameId;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public List<Player> getPlayers() {

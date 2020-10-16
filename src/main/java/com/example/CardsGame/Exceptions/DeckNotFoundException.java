@@ -11,8 +11,4 @@ public class DeckNotFoundException extends RuntimeException{
     public DeckNotFoundException(String message) {
         super(message);
     }
-
-    public DeckNotFoundException(Throwable cause) {
-        super(cause);
-    }
 }
